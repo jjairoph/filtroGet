@@ -13,8 +13,18 @@ import re  # Expresiones regulares
 k_inicio_lista = '<ul class="product_grid" id="product_list">'
 #k_inicio_lista = '\n\d{1,2}\n'
 
-'#Patron para cada item'
-k_item = '<li class="grid_4 ajax_block_product first_item item clearfix omega alpha">'
+'#Patron para cada item. El problema es que para los dos primeros es diferente'
+"""
+<li class="grid_4 ajax_block_product first_item item clearfix omega alpha">
+<li class="grid_4 ajax_block_product  alternate_item clearfix omega alpha">
+<li class="grid_4 ajax_block_product  item clearfix omega alpha">
+<li class="grid_4 ajax_block_product  item clearfix omega alpha">
+"""
+
+#'k_item = '<li class="grid_4 ajax_block_product first_item item clearfix omega alpha">''
+#k_item = 'grid_4\sajax_block_product\sfirst_item\sitem\sclearfix\somega\salpha'
+k_item = '<li\sclass="grid_4\sajax_block_product\s'
+k_item = '<li class="grid_4 ajax_block_product '
 
 
 
@@ -56,19 +66,10 @@ f.close()
 medicamentos = []
 
 '#Ahora partir por cada linea'
-'#'
-pf = re.compile(k_item)
-iteratorfile = pf.finditer(filedata)
+p = re.compile(k_item)
+medicamentos = p.split(filedata)
 
-
-for i, part in enumerate(filedata.split(k_item)):
-    if not part.strip(): continue  # make sure its not empty
-    #na = 'res.txt'
-    #file_tmp = open(na, 'w')
-    '# Escribe en el archivo la información separada por unidades(week_unit1.txt, week_unit2.txt ...)'
-    medicamentos.append(part)
-
-'#En el archivo queda la lista con los medicamentos'
+'#En medicamentos quedan los 14 registros, falta filtrar mas '
 
 
 
