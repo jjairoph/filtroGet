@@ -3,6 +3,7 @@ import os  # Mostrar la ruta al archivo
 import re  # Expresiones regulares
 import urllib
 import urllib2
+import json
 
 '#https://docs.python.org/2/howto/urllib2.html'
 '#HOWTO Fetch Internet Resources Using urllib2'
@@ -23,14 +24,30 @@ class SeparaInfoFarmalisto:
 
     k_item = '<li class="grid_4 ajax_block_product [a-z_\s]{13,50}omega alpha">'
 
-    '#DEtalle de las columnas de cada fila'
+    '#DEtalle del patron de las columnas de cada fila'
     k_product_img_link = '<a class="product_img_link"\shref="[a-z:/.0-9-]{1,180}"'
-    k_namepro ='namepro="[A-Z\s\/0-9a-z-óáéíú]{1,170}"'
+    k_namepro ='namepro="[A-Z\s\/0-9\%a-z-óáéíú.]{10,180}"'
     k_alt = 'alt="[[A-Z\s0-9a-z]{1,150}"\s\/>'
-    k_name_product_search = '<div class="name_product_search"><a href="[a-z:/.0-9-]{1,180}"'
+    k_desc_prod = 'html" title="[A-Z\s\/0-9\%a-z-óáéíú.]{10,180}">'
     k_pricepro = '\spricepro="[0-9.]{1,10}"\s'
     k_id_product = '&id_product=[0-9]{1,7}&'
     k_linkrewrite = 'linkrewrite="[0-9a-z-]{1,100}"'
+
+    '#Strings para reemplazar'
+
+    '#Mejorar el reemplazo'
+    k_reemp_product_img_link = "product_img_link"
+
+    k_reemp_namepro = 'namepro='
+    k_reemp_alt = "alt="
+
+    '#Mejorar reemplazo'
+    k_reemp_desc_prod = "title="
+    k_reemp_pricepro = "pricepro="
+    k_reemp_id_product = "&id_product="
+    k_reemp_linkrewrite = "linkrewrite="
+
+
 
 
     url = 'http://www.farmalisto.com.co/buscar'
@@ -71,7 +88,7 @@ class SeparaInfoFarmalisto:
             control = control + 1
             if not part.strip(): continue  # make sure its not empty
             if control > 1:
-                file_tmp = open(self.archivo, 'r')
+                file_tmp = open(self.archivo, 'w')
                 '# Escribe en el archivo la información'
                 file_tmp.write(part)
                 file_tmp.close()
@@ -92,6 +109,11 @@ class SeparaInfoFarmalisto:
         '#Ahora partir por cada linea'
         p = re.compile(self.k_item)
         self.filas = p.split(filedata)
+
+        '#Revisar que el primer item no este vacio'
+        if len(self.filas[0]) == 0:
+            del self.filas[0]
+
         return self.filas
 
     def separar_items(self):
@@ -104,12 +126,15 @@ class SeparaInfoFarmalisto:
         item = []
         '#Aplicar el filtro id_producto'
         p = re.compile(self.k_id_product)
+
         iteratorfile = p.finditer(fila)
         for match in iteratorfile:
             """print(match.span())#Punto en donde se encuentra la coincidencia
             print( match.start())#Donde comienza el string que concuerda
             print( match.end())#Donde termina el string que concuerda"""
             id_producto = match.string[match.start(): match.end()]
+            id_producto = id_producto.replace( "&id_product=" , "")
+            id_producto = id_producto.replace("&", "")
             item.append(id_producto)
 
         '#Aplicar el filtro imagen link'
@@ -120,9 +145,12 @@ class SeparaInfoFarmalisto:
             print( match.start())#Donde comienza el string que concuerda
             print( match.end())#Donde termina el string que concuerda"""
             img_link = match.string[match.start(): match.end()]
+            img_link = img_link.replace("product_img_link", "")
+            img_link = img_link.replace('<a class=\"', "")
+            img_link = img_link.replace("href=", "")
             item.append(img_link)
 
-        '#Aplicar el filtro nombre producto'
+        '#Aplicar el filtro nombre producto CONTIENE LA MARCA'
         p = re.compile(self.k_namepro)
         iteratorfile = p.finditer(fila)
         for match in iteratorfile:
@@ -130,7 +158,19 @@ class SeparaInfoFarmalisto:
             print( match.start())#Donde comienza el string que concuerda
             print( match.end())#Donde termina el string que concuerda"""
             nombre_producto = match.string[match.start(): match.end()]
+            nombre_producto = nombre_producto.replace("namepro=", "")
             item.append(nombre_producto)
+
+        '#Aplicar el filtro nombre desc producto'
+        p = re.compile(self.k_desc_prod)
+        iteratorfile = p.finditer(fila)
+        for match in iteratorfile:
+            """print(match.span())#Punto en donde se encuentra la coincidencia
+            print( match.start())#Donde comienza el string que concuerda
+            print( match.end())#Donde termina el string que concuerda"""
+            desc_prod = match.string[match.start(): match.end()]
+            desc_prod = desc_prod.replace('title=', "")
+            item.append(desc_prod)
 
         '#Aplicar el filtro precio'
         p = re.compile(self.k_pricepro)
@@ -140,12 +180,21 @@ class SeparaInfoFarmalisto:
             print( match.start())#Donde comienza el string que concuerda
             print( match.end())#Donde termina el string que concuerda"""
             precio = match.string[match.start(): match.end()]
+            precio = precio.replace("pricepro=", "")
             item.append(precio)
-        self.medicamentos.append(item)
+
+        '#Se borra el que llegue vacio'
+        if len(item) > 1:
+            self.medicamentos.append(item)
 
     def escribir_archivo(self, filename):
-        outfile = open(filename, 'r')
-        outfile.write("\n".join(self.medicamentos))
+        outfile = open(filename, 'a')
+        for linea in self.medicamentos:
+            json.dump(linea, outfile)
+            outfile.write('\n')
+            '#outfile.write("\n".join(linea))'
+
+        outfile.close()
 
 
 
