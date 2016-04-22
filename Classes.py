@@ -66,11 +66,11 @@ class SeparaInfoFarmalisto:
 
 
     '#Constructor'
-    def __init__(self, medicamento, farmacia):
+    def __init__(self, medicamento, farmacia, contador):
         self.medicamentos = []  # creates a new empty list for each medicine
         self.medicamento = medicamento #Medicamento a consultar
         self.farmacia = farmacia
-        self.archivo = farmacia + '_' + medicamento + '.txt'
+        self.archivo = farmacia + '_' + str(contador) + '.txt'
         self.filas = []
 
 
@@ -125,7 +125,6 @@ class SeparaInfoFarmalisto:
         '#Revisar que el primer item no este vacio'
         if len(self.filas[0]) == 0:
             del self.filas[0]
-
         return self.filas
 
     def separar_items(self):
@@ -250,11 +249,11 @@ class SeparaSFarma:
 
 
     '#Constructor podria venir de clase padre'
-    def __init__(self, medicamento, farmacia):
+    def __init__(self, medicamento, farmacia, contador):
         self.medicamentos = []  # creates a new empty list for each medicine
         self.farmacia = farmacia
         self.medicamento = medicamento  # Medicamento a consultar
-        self.archivo = farmacia + '_' + medicamento + '.txt'
+        self.archivo = farmacia + '_' + str(contador) + '.txt'
         self.filas = []
 
 
