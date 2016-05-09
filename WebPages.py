@@ -5,6 +5,7 @@ import urllib
 import urllib2
 import json
 import string
+from argparse import _AppendAction
 
 '#https://docs.python.org/2/howto/urllib2.html'
 '#HOWTO Fetch Internet Resources Using urllib2'
@@ -105,27 +106,38 @@ class SeparaInfoFarmalisto:
                 file_tmp.write(part)
                 file_tmp.close()
                 '#En el archivo queda la lista con los medicamentos'
+            else:
+                '# No debe haber archivo'
+
 
 
 
 
     def get_items(self):
         '#Abre el archivo con todos los medicamentos'
-        f = open(self.archivo, 'r')  # Toco modificar había un caracter de continuación raro
-        filedata = f.read()
-        f.close()
 
-        '#Inicializar la lista de los medicamentos'
-        self.filas = []
+        '#Verificar que el archivo existe'
+        try:
+            f = open(self.archivo, 'r')  # Toco modificar había un caracter de continuación raro
+            filedata = f.read()
+            f.close()
+            '#Inicializar la lista de los medicamentos'
+            self.filas = []
 
-        '#Ahora partir por cada linea'
-        p = re.compile(self.k_item)
-        self.filas = p.split(filedata)
+            '#Ahora partir por cada linea'
+            p = re.compile(self.k_item)
+            self.filas = p.split(filedata)
 
-        '#Revisar que el primer item no este vacio'
-        if len(self.filas[0]) == 0:
-            del self.filas[0]
-        return self.filas
+            '#Revisar que el primer item no este vacio'
+            if len(self.filas[0]) == 0:
+                del self.filas[0]
+            return self.filas
+        except IOError:
+            print "Oops! medicamento no encontrado " + self.medicamento
+
+
+
+
 
     def separar_items(self):
         '#Hacer loop a la lista. No mirar el item 0 '
