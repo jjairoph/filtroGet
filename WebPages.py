@@ -5,6 +5,7 @@ import urllib
 import urllib2
 import json
 import string
+import codecs
 from argparse import _AppendAction
 
 '#https://docs.python.org/2/howto/urllib2.html'
@@ -87,7 +88,7 @@ class SeparaInfoFarmalisto:
         data = urllib.urlencode(values)
         req = urllib2.Request(self.url, data)
         response = urllib2.urlopen(req)
-        string_filtrar = response.read()
+        string_filtrar = response.read().decode("utf8")
         self.filtrar_archivo(string_filtrar)
 
 
@@ -101,7 +102,7 @@ class SeparaInfoFarmalisto:
             control = control + 1
             if not part.strip(): continue  # make sure its not empty
             if control > 1:
-                file_tmp = open(self.archivo, 'w')
+                file_tmp = codecs.open(self.archivo, 'w', 'utf-8')
                 '# Escribe en el archivo la información'
                 file_tmp.write(part)
                 file_tmp.close()
@@ -118,7 +119,7 @@ class SeparaInfoFarmalisto:
 
         '#Verificar que el archivo existe'
         try:
-            f = open(self.archivo, 'r')  # Toco modificar había un caracter de continuación raro
+            f = codecs.open(self.archivo, 'r', 'utf-8')  # Toco modificar había un caracter de continuación raro
             filedata = f.read()
             f.close()
             '#Inicializar la lista de los medicamentos'
@@ -187,6 +188,7 @@ class SeparaInfoFarmalisto:
             """print(match.span())#Punto en donde se encuentra la coincidencia
             print( match.start())#Donde comienza el string que concuerda
             print( match.end())#Donde termina el string que concuerda"""
+            #NO DEBO USAR NINGUN TAG TITLE XQUE ESE TIENE AQUTE TOMAR LO DE DENTRO DEL TAG
             desc_prod = match.string[match.start()+13: match.end()-2]
             desc_prod = 'desc_prod' + k_sep_campo + desc_prod
             item.append(desc_prod)
