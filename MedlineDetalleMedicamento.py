@@ -38,6 +38,11 @@ class InfoMedicamentoMedline:
 
     PASSWD_LOCAL = "elpdhsqep"
     LOCALSQL_INSTANCE = 'pharmallium'
+    #TABLA_CARACTERISTICAS = 'pharmallium.medlinemedicamentos'
+    TABLA_CARACTERISTICAS = 'pharmallium.medlinemedsunicos'
+
+    INSERT_SIN_DUPLICADOS = 'INSERT into ' + TABLA_CARACTERISTICAS + ' (NombreMedicamento, LinkHtml, StringConsulta, why, how, otherUses, precautions, specialDietary, ifIForget, sideEffects, storageConditions, overdose, otherInformation, brandName) ' \
+                            ' values (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)'
 
     '#Recibir el URL base como parametro'
     linkInicial = 'https://medlineplus.gov/spanish/druginfo/meds/'
@@ -81,7 +86,7 @@ class InfoMedicamentoMedline:
         r = urllib.urlopen(linkCompleto).read()
         return BeautifulSoup(r)
 
-
+    '#Inserta en la tabla correspondientye la longitud de cada campo para todos los medicamentos'
     def insertarMysqlLongitud(self, fila, consulta, med, finlink):
 
         record = [med, finlink, consulta, fila['why'], fila['how'], fila['other-uses'],fila['precautions'], fila['special-dietary'], fila['if-i-forget'], fila['side-effects'], fila['storage-conditions'], fila['overdose'], fila['other-information'],fila['brand-name']]
@@ -89,7 +94,7 @@ class InfoMedicamentoMedline:
         '# prepare a cursor object using cursor() method'
         cursor = db.cursor()
         # SQL query to INSERT a record into the table FACTRESTTBL.
-        cursor.execute('''INSERT into pharmallium.medlinemedicamentos (NombreMedicamento, LinkHtml, StringConsulta, why, how, otherUses, precautions, specialDietary, ifIForget, sideEffects, storageConditions, overdose, otherInformation, brandName)
+        cursor.execute('''INSERT into '  + TABLA_CARACTERISTICAS + ' (NombreMedicamento, LinkHtml, StringConsulta, why, how, otherUses, precautions, specialDietary, ifIForget, sideEffects, storageConditions, overdose, otherInformation, brandName)
                           values (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)''', record)
 
         # Commit your changes in the database
@@ -98,7 +103,7 @@ class InfoMedicamentoMedline:
         # disconnect from server
         #db.close()
 
-
+    '#Ingresar las caracteristicas a la tabla'
     def insertarMysqlMedicamento(self, fila, consulta, med, finlink):
         record = [med, finlink, consulta, fila['why'], fila['how'], fila['other-uses'], fila['precautions'],
                   fila['special-dietary'], fila['if-i-forget'], fila['side-effects'], fila['storage-conditions'],
@@ -109,8 +114,7 @@ class InfoMedicamentoMedline:
 
         try:
             '# SQL query to INSERT a record into the table '
-            cursor.execute('''INSERT into pharmallium.medlinemedicamentosinfo (NombreMedicamento, LinkHtml, StringConsulta, why, how, otherUses, precautions, specialDietary, ifIForget, sideEffects, storageConditions, overdose, otherInformation, brandName)
-                             values (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)''', record)
+            cursor.execute(self.INSERT_SIN_DUPLICADOS, record)
             # Commit your changes in the database
             db.commit()
         except MySQLdb.IntegrityError, e:
