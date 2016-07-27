@@ -5,6 +5,9 @@ import urllib
 import urllib2
 import json
 import codecs
+import datetime
+import sys
+import MedlineDetalleMedicamento
 from bs4 import BeautifulSoup
 
 '#Query para obtener informacion medicamento'
@@ -25,6 +28,9 @@ http://regexr.com/
 '#TODAS LAS CONSTANTES DEFINIDAS POR FUERA DE LA CLASE NO SE PUEDEN USAR'
 '#Solo sirven en el programa principal'
 archivoResultadoMedline = 'MedlineResultado.json'
+
+'#Archivo con todos los medicamentos a consultar'
+k_archivoMedicamentos = 'ATCCompletoMedLine.txt'
 
 '#Fake browser visit '
 k_url_from = 'http://www.ichangtou.com/#company:data_000008.html'
@@ -97,15 +103,33 @@ class SeparaInfoMedline:
     '#Hacer la petición GET y capturar resultado'
     'El resultado es un json con el resultado obtenido de la consulta, nombre y pagina con la informacion'
     '# Ibuprofeno a693050-es.html'
-    def set_requestWebScraping(self, medicamento):
+    def set_requestWebScraping(self, idatc_medicamento):
         # headers = {'Connection': 'keep-alive', 'Cache-Control': 'max-age=0', 'Referer': 'http://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=293', 'Origin': 'http://www.transtats.bts.gov', 'Upgrade-Insecure-Requests': 1, 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.112 Safari/537.36', 'Cookie': 'ASPSESSIONIDQADBBRTA=CMKGLHMDDJIECMNGLMDPOKHC', 'Accept-Language': 'en-US,en;q=0.8', 'Accept-Encoding': 'gzip, deflate', 'Content-Type': 'application/x-www-form-urlencoded'}
+        #Separar Id Medicamento del nombre
+        lista = idatc_medicamento.split('\t')
+        idmed = lista[0]
+        medicamento = lista[1]
         values = {'v:project': 'medlineplus-spanish',
                   'v:sources': 'medlineplus-spanish-bundle',
                   'query': medicamento,
                   'binning-state': 'group==Medicinas y suplementos'}
-        data = urllib.urlencode(values)
-        req = urllib2.Request(self.url, data)
-        response = urllib2.urlopen(req)
+
+
+        try:
+            data = urllib.urlencode(values)
+            req = urllib2.Request(self.url, data)
+            response = urllib2.urlopen(req)
+        except IOError as (errno, strerror):
+            print "I/O error({0}): {1}".format(errno, strerror)
+            print data
+            print str(response)
+        except:
+            print "Unexpected error:", sys.exc_info()[0]
+            print data
+            print str(response)
+            raise
+
+
         string_filtrar = response.read()
         soup = BeautifulSoup(string_filtrar)
         '#Obtener todos los resultados que corresponden a medicinas y suplementos'
@@ -138,19 +162,49 @@ if __name__ == "__main__":
     print ("Iniciando programa")
 
     '#De un archivo plano de una sola columna tomar los nombres de los medicamentos a consultar en medline'
-    meds_file = open("MedicamentosNoRepetidosConsultar.txt", "r")
-    lines_med = meds_file.readlines()
+    #meds_file = open(k_archivoMedicamentos, "r")
+    with codecs.open(k_archivoMedicamentos, 'r', encoding='utf8') as meds_file:
+        lines_med = meds_file.readlines()
     meds_file.close()
     '#Diccionario que muestra el parametro medicamento a consultar y los resultados obtenidos'
     resultadoFinal = {}
 
+    contador = 0
+    print(datetime.datetime.now())
     for medicamento in lines_med:
+        lista = medicamento.split('\t')
+        idmed = lista[0]
+        medNombre = lista[1]
+        resultado = {}
         medline = SeparaInfoMedline(medicamento.replace('\n', ''))
-        resultadoFinal[medicamento] = medline.set_requestWebScraping(medicamento)
+        resultado = medline.set_requestWebScraping(medicamento)
+        resultadoFinal[medicamento] = resultado
+        contador = contador + 1
+        print "medicamento:" + str(contador)
+        '#Obtener detalle del medicamento*********************************'
+        for k in resultado:
+            medicamentoLink = resultado[k]
+            finLink = medicamentoLink
+            print (finLink)
+            detalleMedicamento = MedlineDetalleMedicamento.InfoMedicamentoMedline(finLink)
+            resultadoFinal[k] = detalleMedicamento.getPropiedadesMedicamento(detalleMedicamento.getSoup(finLink))
+            detalleMedicamento.insertarMysqlMedicamento(detalleMedicamento.getPropiedadesMedicamento(detalleMedicamento.getSoup(finLink)), k, medNombre, finLink, idmed)
+
+
+        '''
+        finLink = medicamentoLink[medl]
+        print medl
+        print (finLink)
+        detalleMedicamento = InfoMedicamentoMedline(finLink)
+        resultadoFinal[medl] = detalleMedicamento.getPropiedadesMedicamento(detalleMedicamento.getSoup(finLink))
+        detalleMedicamento.insertarMysqlMedicamento(
+        detalleMedicamento.getPropiedadesMedicamento(detalleMedicamento.getSoup(finLink)), k, medl, finLink)
+        '''
 
     '#Escribir el resultado en un archivo en formato JSON'
     with codecs.open(archivoResultadoMedline, 'w', 'utf8') as f:
         f.write(json.dumps(resultadoFinal, indent=4, sort_keys=True, ensure_ascii=False))
-
+    print(datetime.datetime.now())
     print 'Programa finalizado resultado en ' + archivoResultadoMedline
+
 

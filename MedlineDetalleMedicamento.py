@@ -5,6 +5,7 @@ import json
 import codecs
 import MySQLdb
 import sys
+
 from pprint import pprint
 
 #http://web.stanford.edu/~zlotnick/TextAsData/Web_Scraping_with_Beautiful_Soup.html
@@ -41,8 +42,8 @@ class InfoMedicamentoMedline:
     #TABLA_CARACTERISTICAS = 'pharmallium.medlinemedicamentos'
     TABLA_CARACTERISTICAS = 'pharmallium.medlinemedsunicos'
 
-    INSERT_SIN_DUPLICADOS = 'INSERT into ' + TABLA_CARACTERISTICAS + ' (NombreMedicamento, LinkHtml, StringConsulta, why, how, otherUses, precautions, specialDietary, ifIForget, sideEffects, storageConditions, overdose, otherInformation, brandName) ' \
-                            ' values (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)'
+    INSERT_SIN_DUPLICADOS = 'INSERT into ' + TABLA_CARACTERISTICAS + ' (NombreMedicamento, LinkHtml, StringConsulta, why, how, otherUses, precautions, specialDietary, ifIForget, sideEffects, storageConditions, overdose, otherInformation, brandName, id_atc) ' \
+                            ' values (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)'
 
     '#Recibir el URL base como parametro'
     linkInicial = 'https://medlineplus.gov/spanish/druginfo/meds/'
@@ -87,15 +88,14 @@ class InfoMedicamentoMedline:
         return BeautifulSoup(r)
 
     '#Inserta en la tabla correspondientye la longitud de cada campo para todos los medicamentos'
-    def insertarMysqlLongitud(self, fila, consulta, med, finlink):
+    def insertarMysqlLongitud(self, fila, consulta, med, finlink, id_atc):
 
-        record = [med, finlink, consulta, fila['why'], fila['how'], fila['other-uses'],fila['precautions'], fila['special-dietary'], fila['if-i-forget'], fila['side-effects'], fila['storage-conditions'], fila['overdose'], fila['other-information'],fila['brand-name']]
+        record = [med, finlink, consulta, fila['why'], fila['how'], fila['other-uses'],fila['precautions'], fila['special-dietary'], fila['if-i-forget'], fila['side-effects'], fila['storage-conditions'], fila['overdose'], fila['other-information'],fila['brand-name'], id_atc]
         db = MySQLdb.connect(host='localhost', user='root', passwd=self.PASSWD_LOCAL, db=self.LOCALSQL_INSTANCE)
         '# prepare a cursor object using cursor() method'
         cursor = db.cursor()
         # SQL query to INSERT a record into the table FACTRESTTBL.
-        cursor.execute('''INSERT into '  + TABLA_CARACTERISTICAS + ' (NombreMedicamento, LinkHtml, StringConsulta, why, how, otherUses, precautions, specialDietary, ifIForget, sideEffects, storageConditions, overdose, otherInformation, brandName)
-                          values (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)''', record)
+        cursor.execute(self.INSERT_SIN_DUPLICADOS, record)
 
         # Commit your changes in the database
         db.commit()
@@ -104,10 +104,10 @@ class InfoMedicamentoMedline:
         #db.close()
 
     '#Ingresar las caracteristicas a la tabla'
-    def insertarMysqlMedicamento(self, fila, consulta, med, finlink):
+    def insertarMysqlMedicamento(self, fila, consulta, med, finlink, idatc):
         record = [med, finlink, consulta, fila['why'], fila['how'], fila['other-uses'], fila['precautions'],
                   fila['special-dietary'], fila['if-i-forget'], fila['side-effects'], fila['storage-conditions'],
-                  fila['overdose'], fila['other-information'], fila['brand-name']]
+                  fila['overdose'], fila['other-information'], fila['brand-name'], idatc]
         db = MySQLdb.connect(host='localhost', user='root', passwd=self.PASSWD_LOCAL, db=self.LOCALSQL_INSTANCE)
         '# prepare a cursor object using cursor() method'
         cursor = db.cursor()
