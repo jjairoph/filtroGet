@@ -1,0 +1,433 @@
+ATC01032	OCTREOTIDO
+ATC01033	OFLOXACINA																		
+ATC01034	OLANZAPINA																		
+ATC01035	OLAPATADINA																		
+ATC01036	OLEATO DE SODIO																		
+ATC01037	OLMESARTAN																		
+ATC01038	OLODATEROL																		
+ATC01039	OLOPATADINA																		
+ATC01040	OMBITASVIR																		
+ATC01041	OMEGA 3																		
+ATC01042	OMEPRAZOL																		
+ATC01043	ONDANSETRON																		
+ATC01044	OPRELVEKIN																		
+ATC01045	ORGANO HEPARINOIDE																		
+ATC01046	ORLISTAT																		
+ATC01047	ORNITINA																		
+ATC01048	OSELTAMIVIR																		
+ATC01049	OXACILINA																		
+ATC01050	OXALIPLATINO																		
+ATC01051	OXANTEL																		
+ATC01052	OXAPROZIN																		
+ATC01053	OXCARBAZEPINA																		
+ATC01054	OXIBENZONE																		
+ATC01055	OXIBUTININA																		
+ATC01056	OXICODONA																		
+ATC01057	OXIDO DE HIERRO																		
+ATC01058	OXIDO DE MAGNESIO																		
+ATC01059	OXIDO DE ZINC																		
+ATC01060	OXIDO NITRICO																		
+ATC01061	OXIDO NITROSO																		
+ATC01062	OXIGENO																		
+ATC01063	OXIMETAZOLINA																		
+ATC01064	OXIPURINA																		
+ATC01065	OXITETRACICILINA																		
+ATC01066	OXITOCINA																		
+ATC01067	PACLITAXEL																		
+ATC01068	PALIPERIDONA																		
+ATC01069	PALIVIZUMAB																		
+ATC01070	PALONOSETRON																		
+ATC01071	PAMIDRONATO																		
+ATC01072	PAMOATO DE PIRANTEL																		
+ATC01073	PANCREATINA																		
+ATC01074	PANCURONIO																		
+ATC01075	PANITUMUMAB																		
+ATC01076	PANTENOL																		
+ATC01077	PANTENOL DEXPANTENOL																		
+ATC01078	PANTOPRAZOL																		
+ATC01079	PANTOTENATO DE CALCIO																		
+ATC01080	PANTOTENATO DE CALCIO VITAMINA B5																		
+ATC01081	PAPAINA																		
+ATC01082	PAPAVERINA																		
+ATC01083	PARECOXIB																		
+ATC01084	PARGEVERINA																		
+ATC01085	PARICALCITOL																		
+ATC01086	PARITAPREVIR																		
+ATC01087	PAROTIDITIS																		
+ATC01088	PAROXETINA																		
+ATC01089	PASIREOTIDA																		
+ATC01090	PAZOPANIB																		
+ATC01091	PECTINA																		
+ATC01092	PEGFILGRASTIM																		
+ATC01093	PEGINTERFERON ALFA-2A																		
+ATC01094	PEGINTERFERON ALFA-2B																		
+ATC01095	PEMETREXED																		
+ATC01096	PENCICLOVIR																		
+ATC01097	PENICILINA V POTASICA																		
+ATC01098	PENTAMIDINA ISETIONATO																		
+ATC01099	PENTOSAN																		
+ATC01100	PENTOXIFILINA																		
+ATC01101	PEPITA DE UVA ESTANDARIZADA 																		
+ATC01102	PERINDOPRIL																		
+ATC01103	PERMETRINA																		
+ATC01104	PEROXIDO DE BENZOILO																		
+ATC01105	PEROXIDO DE HIDROGENO																		
+ATC01106	PERTUSIS																		
+ATC01107	PERTUZUMAB																		
+ATC01108	PETROLATO																		
+ATC01109	PICOSULFATO DE SODIO																		
+ATC01110	PIDOTIMOD																		
+ATC01111	PILOCARPINA																		
+ATC01112	PIMECROLIMUS																		
+ATC01113	PINAVERIO																		
+ATC01114	PIOGLITAZONA																		
+ATC01115	PIPERACILINA																		
+ATC01116	PIPERAZINA																		
+ATC01117	PIPOTIAZINA																		
+ATC01118	PIRACETAM																		
+ATC01119	PIRANTEL																		
+ATC01120	PIRAZINAMIDA																		
+ATC01121	PIRENOXINA																		
+ATC01122	PIRIDOSTIGMINA																		
+ATC01123	PIRIDOXINA VITAMINA B6																		
+ATC01124	PIRIMETAMINA																		
+ATC01125	PIRITINOL																		
+ATC01126	PIROXICAM																		
+ATC01127	PITAVASTATINA																		
+ATC01128	PLERIXAFOR																		
+ATC01129	PODOFILINA																		
+ATC01130	PODOFILOTOXINA																		
+ATC01131	POLICARBOFILO DE CALCIO																		
+ATC01132	POLICRESULENO																		
+ATC01133	POLIDOCANOL																		
+ATC01134	POLIESTIRENO SULFONATO																		
+ATC01135	POLIETILENGLICOL																		
+ATC01136	POLIGELINA																		
+ATC01137	POLIHEXAMETILEN BIGUANIDINA HIDROCLORURO (PHMB)																		
+ATC01138	POLIMIXINA B																		
+ATC01139	POLISORBATO																		
+ATC01140	POLISULFONATO SODICO AZAPENTACENO																		
+ATC01141	POLIVIDONA																		
+ATC01142	POLOXAMER																		
+ATC01143	POSACONAZOL																		
+ATC01144	POTASIO																		
+ATC01145	POVIDONA																		
+ATC01146	PRALATREXATO																		
+ATC01147	PRALIDOXIMA																		
+ATC01148	PRAMIPEXOL																		
+ATC01149	PRAMOXINA																		
+ATC01150	PRASTERONA																		
+ATC01151	PRASUGREL																		
+ATC01152	PRAVASTATINA																		
+ATC01153	PRAZIQUANTEL																		
+ATC01154	PRAZOSINA																		
+ATC01155	PREDNICARBATO																		
+ATC01156	PREDNISOLONA																		
+ATC01157	PREDNISONA																		
+ATC01158	PREGABALINA																		
+ATC01159	PRILOCAINA																		
+ATC01160	PRIMAQUINA																		
+ATC01161	PROCAINA																		
+ATC01162	PROCIANIDINAS																		
+ATC01163	PROGESTERONA																		
+ATC01164	PROGUANILO																		
+ATC01165	PROLINA																		
+ATC01166	PROMESTRIENO																		
+ATC01167	PROPAFENONA																		
+ATC01168	PROPILENGLICOL																		
+ATC01169	PROPINOX																		
+ATC01170	PROPINOX PARGEVERINA																		
+ATC01171	PROPIONATO DE FLUTICASONA																		
+ATC01172	PROPOFOL																		
+ATC01173	PROPRANOLOL																		
+ATC01174	PROTAMINA																		
+ATC01175	PROTEASA																		
+ATC01176	PROTEINA PLASMATICA HUMANA CON ACTIVIDAD CONTRA LOS INHIBIDORES DEL FACTOR VIII																		
+ATC01177	PRUCALOPRIDA																		
+ATC01178	PYCNOGENOL																		
+ATC01179	QUETIAPINA																		
+ATC01180	QUINAPRIL																		
+ATC01181	QUINFAMIDA																		
+ATC01182	QUININA																		
+ATC01183	RABEPRAZOL																		
+ATC01184	RABIA INACTIVADA																		
+ATC01185	RACECADOTRILO																		
+ATC01186	RALOXIFENO																		
+ATC01187	RALTEGRAVIR																		
+ATC01188	RAMIPRIL																		
+ATC01189	RANIBIZUMAB																		
+ATC01190	RANITIDINA																		
+ATC01191	RASAGILINA																		
+ATC01192	RASBURICASA																		
+ATC01193	REMIFENTANILO																		
+ATC01194	RESORCINOL																		
+ATC01195	RETEPLASE																		
+ATC01196	RETINOL																		
+ATC01197	RETINOL VITAMINA A																		
+ATC01198	RIBAVIRINA																		
+ATC01199	RIBOFLAVINA VITAMINA B2																		
+ATC01200	RIFAMICINA																		
+ATC01201	RIFAMPICINA																		
+ATC01202	RIFAXIMINA																		
+ATC01203	RILPIRIVINA																		
+ATC01204	RILPIVIRINA																		
+ATC01205	RILUZOL																		
+ATC01206	RIOCIGUAT																		
+ATC01207	RISEDRONATO SODICO																		
+ATC01208	RISPERIDONA																		
+ATC01209	RITONAVIR																		
+ATC01210	RITUXIMAB																		
+ATC01211	RIVAROXABAN																		
+ATC01212	RIVASTIGMINA																		
+ATC01213	ROCIVERINA																		
+ATC01214	ROFLUMILAST																		
+ATC01215	ROMIPLOSTIM																		
+ATC01216	ROPIVACAINA																		
+ATC01217	ROSUVASTATINA																		
+ATC01218	ROTAVIRUS VIVO ATENUADO																		
+ATC01219	ROTIGOTINA																		
+ATC01220	ROXITROMICINA																		
+ATC01221	RUBEOLA																		
+ATC01222	RUFLOXACINA																		
+ATC01223	RUIBARBO																		
+ATC01224	RUSCUS ACULEATUS																		
+ATC01225	RUXOLITINIB																		
+ATC01226	SACCHAROMYCES BOULARDI																		
+ATC01227	SACCHAROMYCES CEREVISIAE																		
+ATC01228	SALBUTAMOL																		
+ATC01229	SALICILANILIDA																		
+ATC01230	SALICILATO DE DIETILAMINA																		
+ATC01231	SALICILATO DE METILO																		
+ATC01232	SALICILATO DE SODIO																		
+ATC01233	SALMETEROL																		
+ATC01234	SAPROPTERINA																		
+ATC01235	SAQUINAVIR																		
+ATC01236	SAXAGLIPTINA																		
+ATC01237	SECNIDAZOL																		
+ATC01238	SECUKINUMAB																		
+ATC01239	SELEGILINA																		
+ATC01240	SELENIO																		
+ATC01241	SELENIO SULFURO																		
+ATC01242	SELENITO																		
+ATC01243	SEN																		
+ATC01244	SENOSIDOS																		
+ATC01245	SERINA																		
+ATC01246	SERTACONAZOL																		
+ATC01247	SERTRALINA																		
+ATC01248	SEVELAMER																		
+ATC01249	SEVOFLURANO																		
+ATC01250	SILDENAFIL																		
+ATC01251	SILICIO																		
+ATC01252	SILIMARINA																		
+ATC01253	SILODOSINA																		
+ATC01254	SIMEPREVIR																		
+ATC01255	SIMVASTATINA																		
+ATC01256	SIROLIMUS																		
+ATC01257	SITAGLIPTINA																		
+ATC01258	SODIO																		
+ATC01259	SODIO BICARBONATO																		
+ATC01260	SODIO PICOSULFATO																		
+ATC01261	SODIO YODURO (131I)																		
+ATC01262	SOMATOSTATINA																		
+ATC01263	SOMATROPINA																		
+ATC01264	SORAFENIB																		
+ATC01265	SUBACETATO DE ALUMINIO																		
+ATC01266	SUCCINILCOLINA SUXAMETONIO																		
+ATC01267	SUCRALFATO																		
+ATC01268	SUERO ANTIOFIDICO																		
+ATC01269	SUFENTANILO																		
+ATC01270	SUGAMMADEX																		
+ATC01271	SULBACTAM																		
+ATC01272	SULBUTIAMINA																		
+ATC01273	SULFACETAMIDA																		
+ATC01274	SULFADIAZINA																		
+ATC01275	SULFADIAZINA DE PLATA																		
+ATC01276	SULFADOXINA																		
+ATC01277	SULFAMETIZOL																		
+ATC01278	SULFAMETOXAZOL																		
+ATC01279	SULFASALAZINA																		
+ATC01280	SULFATO DE ALUMINIO																		
+ATC01281	SULFATO DE BARIO																		
+ATC01282	SULFATO DE BARIO CITRATADO																		
+ATC01283	SULFATO DE MAGNESIO																		
+ATC01284	SULFATO DE SODIO																		
+ATC01285	SULFATO DE ZINC																		
+ATC01286	SULPIRIDA																		
+ATC01287	SULTAMICILINA																		
+ATC01288	SUMATRIPTAN																		
+ATC01289	SUNITINIB																		
+ATC01290	SUPLEMENTO DE MINERALES COBRE																		
+ATC01291	TACROLIMUS																		
+ATC01292	TADALAFIL																		
+ATC01293	TALIDOMIDA																		
+ATC01294	TALIGLUCERASA																		
+ATC01295	TALIO 201TL																		
+ATC01296	TAMOXIFENO																		
+ATC01297	TAMSULOSINA																		
+ATC01298	TAPENTADOL																		
+ATC01299	TAURINA																		
+ATC01300	TAVOPROST																		
+ATC01301	TAZAROTENO																		
+ATC01302	TAZOBACTAM																		
+ATC01303	TECLOZAN																		
+ATC01304	TECNECIO  (99MTC) BICISATO																		
+ATC01305	TECNECIO (99MTC) ALBUMINA HUMANA																		
+ATC01306	TECNECIO (99MTC) ANTIGRANULOCITOS ANTICUERPOS																		
+ATC01307	TECNECIO (99MTC) CELULAS MARCADAS AGENTES DE ESTA�O																		
+ATC01308	TECNECIO (99MTC) EXAMETAZIMA																		
+ATC01309	TECNECIO (99MTC) MEBROFENIN																		
+ATC01310	TECNECIO (99MTC) MEDRONICO ACIDO																		
+ATC01311	TECNECIO (99MTC) MERTIATIDA																		
+ATC01312	TECNECIO (99MTC) NANOCOLOIDE																		
+ATC01313	TECNECIO (99MTC) OXIDRONICO ACIDO																		
+ATC01314	TECNECIO (99MTC) PERTECNETATO																		
+ATC01315	TECNECIO (99MTC) PIROFOSFATO																		
+ATC01316	TECNECIO (99MTC) SESTAMIBI																		
+ATC01317	TECNECIO (99MTC) TETROFOSMIN																		
+ATC01318	TEICOPLANINA																		
+ATC01319	TELAPREVIR																		
+ATC01320	TELMISARTAN																		
+ATC01321	TEMOZOLOMIDA																		
+ATC01322	TENECTEPLASA																		
+ATC01323	TENOFOVIR																		
+ATC01324	TENOXICAM																		
+ATC01325	TEOFILINA																		
+ATC01326	TERAZOSINA																		
+ATC01327	TERBINAFINA																		
+ATC01328	TERBUTALINA																		
+ATC01329	TERCONAZOL																		
+ATC01330	TERIFLUNOMIDA																		
+ATC01331	TERIPARATIDA																		
+ATC01332	TERLIPRESINA																		
+ATC01333	TESTOSTERONA																		
+ATC01334	TETANO TOSFERINA DIFTERIA																		
+ATC01335	TETANOS TOXOIDE																		
+ATC01336	TETANOS TOXOIDE COMBINADO CON DIFTERIA TOXOIDE																		
+ATC01337	TETRABENAZINA																		
+ATC01338	TETRACAINA																		
+ATC01339	TETRACICLINA																		
+ATC01340	TETRACOSACTIDO																		
+ATC01341	TETRAKIS ( 2- METOXI ISOBUTIL ISONITRILO) COBRE (I) TETRAFLUOROBORATO																		
+ATC01342	TETRIZOLINA																		
+ATC01343	TIAMINA VITAMINA B1																		
+ATC01344	TIAPRIDA																		
+ATC01345	TIBOLONA																		
+ATC01346	TICAGRELOR																		
+ATC01347	TICLOPIDINA																		
+ATC01348	TIGECICLINA																		
+ATC01349	TILACTASA																		
+ATC01350	TIMEROSAL																		
+ATC01351	TIMOL																		
+ATC01352	TIMOLOL																		
+ATC01353	TINIDAZOL																		
+ATC01354	TINTURA DE YODO																		
+ATC01355	TIOCOLCHICOSIDO																		
+ATC01356	TIOGUANINA																		
+ATC01357	TIOMERSAL																		
+ATC01358	TIOPENTAL																		
+ATC01359	TIORIDAZINA																		
+ATC01360	TIROFIBAN																		
+ATC01361	TIROSINA																		
+ATC01362	TIROTROPINA																		
+ATC01363	TIZANIDINA																		
+ATC01364	TOBRAMICINA																		
+ATC01365	TOCILIZUMAB																		
+ATC01366	TOCOFEROL VITAMINA E																		
+ATC01367	TOFACITINIB																		
+ATC01368	TOLNAFTATO																		
+ATC01369	TOLTERODINA																		
+ATC01370	TOPIRAMATO																		
+ATC01371	TOPOTECAN																		
+ATC01372	TORASEMIDA																		
+ATC01373	TOXOIDE TETANICO																		
+ATC01374	TRABECTEDINA																		
+ATC01375	TRAMADOL																		
+ATC01376	TRANDOLAPRIL																		
+ATC01377	TRASTUZUMAB																		
+ATC01378	TRAVOPROST																		
+ATC01379	TRAZODONA																		
+ATC01380	TREMENTINA																		
+ATC01381	TREONINA																		
+ATC01382	TREPROSTINIL																		
+ATC01383	TRETINOINA																		
+ATC01384	TRETINOINA ACIDO RETINOICO																		
+ATC01385	TRIAMCINOLONA																		
+ATC01386	TRIAZOLAM																		
+ATC01387	TRIBENOSIDA																		
+ATC01388	TRIBENOSIDO																		
+ATC01389	TRICLOSAN																		
+ATC01390	TRIFLUOPERAZINA																		
+ATC01391	TRIGLICERIDOS																		
+ATC01392	TRIMEBUTINA																		
+ATC01393	TRIMETAZIDINA																		
+ATC01394	TRIMETOPRIM																		
+ATC01395	TRIPTOFANO																		
+ATC01396	TRIPTORELINA																		
+ATC01397	TROMBINA																		
+ATC01398	TROMBINA HUMANA																		
+ATC01399	TROPICAMIDA																		
+ATC01400	TROXERUTINA																		
+ATC01401	TUBERCULINA																		
+ATC01402	UMECLIDINIO																		
+ATC01403	UNDECILENATO DE ZINC																		
+ATC01404	UREA 14C																		
+ATC01405	UREA CARBAMIDA																		
+ATC01406	UROFOLITROPIN																		
+ATC01407	USTEKINUMAB																		
+ATC01408	VACUNA COMBINADA DIFTERIA																		
+ATC01409	VACUNA CONTRA EL VIRUS DEL PAPILOMA HUMANO																		
+ATC01410	VACUNA CONTRA LA HEPATITIS A Y B 																		
+ATC01411	VACUNA CONTRA SARAMPION PARODITIS RUBEOLA Y VARICELA																		
+ATC01412	VACUNA FIEBRE TIFOIDEA																		
+ATC01413	VACUNA FIEBRE TIFOIDEA HEPATITIS A																		
+ATC01414	VACUNA MENINGOCOCO																		
+ATC01415	VACUNA NEUMOCOCO																		
+ATC01416	VACUNA PNEUMOCOCO POLIVALENTE																		
+ATC01417	VACUNA POLIOMELITIS																		
+ATC01418	VACUNA VARICELA																		
+ATC01419	VACUNA VIRUS VIVOS ATENUADOS SARAMPION																		
+ATC01420	VALACICLOVIR																		
+ATC01421	VALERIANA																		
+ATC01422	VALGANCICLOVIR																		
+ATC01423	VALINA																		
+ATC01424	VALSARTAN																		
+ATC01425	VANADIO																		
+ATC01426	VANCOMICINA																		
+ATC01427	VARDENAFIL																		
+ATC01428	VARENICLINA																		
+ATC01429	VEDOLIZUMAB																		
+ATC01430	VELAGLUCERASA ALFA																		
+ATC01431	VEMURAFENIB																		
+ATC01432	VENLAFAXINA																		
+ATC01433	VERAPAMILO																		
+ATC01434	VERNAKALANT																		
+ATC01435	VIGABATRINA																		
+ATC01436	VILANTEROL																		
+ATC01437	VILDAGLIPTINA																		
+ATC01438	VINBLASTINA																		
+ATC01439	VINCRISTINA																		
+ATC01440	VINORELBINA																		
+ATC01441	VIOLETA DE GENCIANA METILROSANILINA																		
+ATC01442	VIRUS DE PAPERA VIVO ATENUADO																		
+ATC01443	VIRUS DE RUBEOLA VIVO ATENUADO																		
+ATC01444	VIRUS DE SARAMPION VIVO ATENUADO																		
+ATC01445	VIRUS DE VARICELA VIVO ATENUADO																		
+ATC01446	VISMODEGIB																		
+ATC01447	VORICONAZOL																		
+ATC01448	VORINOSTAT																		
+ATC01449	VORTIOXETINA																		
+ATC01450	WARFARINA																		
+ATC01451	XILOMETAZOLINA																		
+ATC01452	YODO																		
+ATC01453	YODO RESUBLIMADO																		
+ATC01454	YODOPOVIDONA																		
+ATC01455	YODURO DE POTASIO																		
+ATC01456	ZANAMIVIR																		
+ATC01457	ZEAXANTINA																		
+ATC01458	ZIDOVUDINA																		
+ATC01459	ZINC																		
+ATC01460	ZIPRASIDONA																		
+ATC01461	ZOFENOPRIL																		
+ATC01462	ZOLMITRIPTANO																		
+ATC01463	ZOLPIDEM																		
+ATC01464	ZOPICLONA

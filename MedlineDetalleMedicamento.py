@@ -84,7 +84,15 @@ class InfoMedicamentoMedline:
 
     def getSoup(self, link):
         linkCompleto = self.linkInicial + link
-        r = urllib.urlopen(linkCompleto).read()
+        try:
+            r = urllib.urlopen(linkCompleto).read()
+        except IOError as (errno, strerror):
+            print "I/O error({0}): {1} link medicamento".format(errno, strerror)
+        except:
+            print "Unexpected error: Link medicamento", sys.exc_info()[0]
+
+            raise
+
         return BeautifulSoup(r)
 
     '#Inserta en la tabla correspondientye la longitud de cada campo para todos los medicamentos'
@@ -159,8 +167,8 @@ if __name__ == "__main__":
         medicamentoLink = data[k]
         for medl in medicamentoLink:
             finLink = medicamentoLink[medl]
-            print medl
-            print (finLink)
+            #print medl
+            #print (finLink)
             detalleMedicamento = InfoMedicamentoMedline(finLink)
             resultadoFinal[medl] = detalleMedicamento.getPropiedadesMedicamento(detalleMedicamento.getSoup(finLink))
             detalleMedicamento.insertarMysqlMedicamento(detalleMedicamento.getPropiedadesMedicamento(detalleMedicamento.getSoup(finLink)), k, medl, finLink)

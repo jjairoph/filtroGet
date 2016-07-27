@@ -30,7 +30,9 @@ http://regexr.com/
 archivoResultadoMedline = 'MedlineResultado.json'
 
 '#Archivo con todos los medicamentos a consultar'
-k_archivoMedicamentos = 'ATCCompletoMedLine.txt'
+k_archivoMedicamentos = 'ATCCompletoMedLineDonedarona.txt'
+
+
 
 '#Fake browser visit '
 k_url_from = 'http://www.ichangtou.com/#company:data_000008.html'
@@ -121,12 +123,10 @@ class SeparaInfoMedline:
             response = urllib2.urlopen(req)
         except IOError as (errno, strerror):
             print "I/O error({0}): {1}".format(errno, strerror)
-            print data
-            print str(response)
+            print medicamento
         except:
             print "Unexpected error:", sys.exc_info()[0]
-            print data
-            print str(response)
+            print medicamento
             raise
 
 
@@ -148,8 +148,8 @@ class SeparaInfoMedline:
         p = re.compile(self.k_id_medicamento)
         iteratorfile = p.finditer(filtrar)
         for match in iteratorfile:
-            print(match.start())  # Donde comienza el string que concuerda
-            print(match.end())  # Donde termina el string que concuerda"""
+            #print(match.start())  # Donde comienza el string que concuerda
+            #print(match.end())  # Donde termina el string que concuerda"""
             cadena = match.string[match.start(): match.end()]
             self.filas.append(cadena)
             '# Escribe en el archivo la información'
